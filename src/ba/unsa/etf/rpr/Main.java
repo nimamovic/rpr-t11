@@ -1,9 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class Main {

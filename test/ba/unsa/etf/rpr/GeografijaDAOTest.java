@@ -75,7 +75,7 @@ class GeografijaDAOTest {
         sarajevo.setNaziv("Sarajevo");
         sarajevo.setBrojStanovnika(500000);
         Drzava bih = new Drzava();
-        sarajevo.setNaziv();
+        //sarajevo.setNaziv();
         bih.setGlavniGrad(sarajevo);
         sarajevo.setDrzava(bih);
 
