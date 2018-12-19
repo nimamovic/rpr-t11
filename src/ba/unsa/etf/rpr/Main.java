@@ -14,10 +14,13 @@ public class Main {
 
     }
     private static void glavniGrad() {
+        System.out.println("Unesite naziv drzave: ");
+        Scanner sc = new Scanner(System.in);
+        String ime = sc.nextLine();
 
     }
 
     public static String ispisiGradove() {
-        return null;
+        return "";
     }
 }
