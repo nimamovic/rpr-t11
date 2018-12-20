@@ -27,13 +27,16 @@ public class GeografijaDAO {
     private GeografijaDAO(){
         connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:baza.db");
+//            connection = DriverManager.getConnection("jdbc:sqlite:baza.db");
+//            System.out.println("asdasdasd");
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@ora.db.lab.ri.etf.unsa.ba:1521:ETFLAB","NI18080","EyXxfWnW");
             System.out.println(connection);
         } catch (SQLException e) {
 //            System.out.println(e.getMessage());
-        }// catch (ClassNotFoundException e) {
-         //   e.printStackTrace();
-       // }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         try {
             PreparedStatement statement=null;
             Statement statement1 = null;
@@ -190,32 +193,18 @@ public class GeografijaDAO {
 
     public Grad glavniGrad(String drzava) {
         try {
-            //System.out.println(drzava);
-//            getDrzava.setString(1,drzava);
-//            ResultSet res = getDrzava.executeQuery();
-//
-//            int id=0;
-//            Drzava drzava1 = new Drzava();
-//            if(!res.next())return null;
-//            System.out.println("a");
-//            do {
-//                drzava1.setNaziv(res.getString(2));
-//                id = res.getInt("glavni_grad");
-//            }while(res.next());
-//
-////            if(!res.isClosed())res.close();
+
             int id=0;
             ResultSet res = dajDrzave.executeQuery();
             Drzava drzava1 = new Drzava();
             while(res.next()){
-                System.out.println(res.getString(2));
+//                System.out.println(res.getString(2));
                 if(drzava.equals(res.getString(2))){
                     drzava1.setNaziv(drzava);
                     id=res.getInt(3);
-//                    res.close();
                 }
             }
-//            System.out.println(id);
+
             getGrad.setInt(1,id);
             res = getGrad.executeQuery();
             if(!res.next()){
@@ -347,6 +336,7 @@ public class GeografijaDAO {
 
         try {
             getDrzava.setString(1,drzava.getNaziv());
+
             ResultSet set = getDrzava.executeQuery();
 //            Stream a = set.getArray(1).getArray();
 
@@ -354,14 +344,17 @@ public class GeografijaDAO {
                 Statement stm = connection.createStatement();
                 set = stm.executeQuery("select count(*) from drzava");
                 ubaci_drzavu.setString(2,drzava.getNaziv());
+                set.next();
                 int a = set.getInt(1);
                 ubaci_drzavu.setInt(1,a+2);
                 set = stm.executeQuery("select count(*) from grad");
+                set.next();
                 int b=set.getInt(1)+3;
 
                 ubaci_drzavu.setInt(3,b);
                 System.out.println(ubaci_drzavu.execute()+" lkjhgfdsa");;
                 dodajGrad(drzava.getGlavniGrad());
+
 
             }
         } catch (SQLException e) {
