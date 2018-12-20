@@ -333,7 +333,6 @@ public class GeografijaDAO {
     }
 
     public void dodajDrzavu(Drzava drzava) {
-
         try {
             getDrzava.setString(1,drzava.getNaziv());
 
@@ -352,7 +351,7 @@ public class GeografijaDAO {
                 int b=set.getInt(1)+3;
 
                 ubaci_drzavu.setInt(3,b);
-                System.out.println(ubaci_drzavu.execute()+" lkjhgfdsa");;
+                System.out.println(ubaci_drzavu.execute()+" ");;
                 dodajGrad(drzava.getGlavniGrad());
 
 
@@ -360,6 +359,7 @@ public class GeografijaDAO {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
 
     }
 
