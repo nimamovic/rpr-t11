@@ -35,4 +35,8 @@ public class Drzava {
     public void setGlavniGrad(Grad gg) {
         glavniGrad=gg;
     }
+
+    public void setNaziv(String drzava) {
+        naziv=drzava;
+    }
 }
