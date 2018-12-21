@@ -28,7 +28,7 @@ public class GeografijaDAO {
         connection = null;
         try {
 //            connection = DriverManager.getConnection("jdbc:sqlite:baza.db");
-//            System.out.println("asdasdasd");
+
             Class.forName("oracle.jdbc.driver.OracleDriver");
             connection = DriverManager.getConnection("jdbc:oracle:thin:@ora.db.lab.ri.etf.unsa.ba:1521:ETFLAB","NI18080","EyXxfWnW");
             System.out.println(connection);
@@ -122,8 +122,6 @@ public class GeografijaDAO {
 
             }
         } catch (Exception e) {
-//            System.out.println("ima baza, ali nece da pripremi statement");
-//            System.out.println(e.getMessage());
             System.out.println(e.getMessage());
         }
 
@@ -198,7 +196,6 @@ public class GeografijaDAO {
             ResultSet res = dajDrzave.executeQuery();
             Drzava drzava1 = new Drzava();
             while(res.next()){
-//                System.out.println(res.getString(2));
                 if(drzava.equals(res.getString(2))){
                     drzava1.setNaziv(drzava);
                     id=res.getInt(3);
