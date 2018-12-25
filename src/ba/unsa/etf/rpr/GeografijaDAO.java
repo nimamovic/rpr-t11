@@ -10,11 +10,6 @@ public class GeografijaDAO {
     private static GeografijaDAO instance;
     private static Connection connection;
     public static void removeInstance() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         instance = null;
     }
     private static PreparedStatement ubaci_drzavu = null;
@@ -67,7 +62,6 @@ public class GeografijaDAO {
 
 
             System.out.println("Proso 4");
-//            System.out.println(drzave.isClosed()+"  ");
             if(true){
                 ubaci_drzavu.setInt(1,1);
                 ubaci_drzavu.setString(2,"Austrija");
@@ -75,9 +69,6 @@ public class GeografijaDAO {
                 System.out.println("proso 10");
                 ubaci_drzavu.execute();
                 System.out.println("proso 10");
-//                ubaci_drzavu.setInt(1,2);
-//                ubaci_drzavu.setString(2,"Bosna i Hercegovina");
-//                ubaci_drzavu.execute();
                 ubaci_drzavu.setInt(1,3);
                 ubaci_drzavu.setString(2,"Francuska");
                 ubaci_drzavu.setInt(3,1);
@@ -86,7 +77,6 @@ public class GeografijaDAO {
                 ubaci_drzavu.setString(2,"Velika Britanija");
                 ubaci_drzavu.setInt(3,2);
                 ubaci_drzavu.execute();
-//                statement.execute("DELETE FROM main.grad;");
                 ubaci_grad.setInt(1,1);
                 ubaci_grad.setInt(3,2206488);
                 ubaci_grad.setString(2,"Pariz");
@@ -154,7 +144,6 @@ public class GeografijaDAO {
                 tabDrzava = dajDrzave.executeQuery();
                 Grad grad = new Grad(tabGrad.getString(2), null, tabGrad.getInt(3));
                 int drId = tabGrad.getInt(4);
-//                System.out.println(drId);
                 Drzava drzava;
                 while(tabDrzava.next()){
 
@@ -162,10 +151,8 @@ public class GeografijaDAO {
                     if(id==drId){
                         drzava=new Drzava();
                         drzava.setNaziv(tabDrzava.getString(2));
-//                        System.out.println("ID glavnog grada: "+tabDrzava.getInt(3));
                         if(tabGrad.getInt(1)==tabDrzava.getInt(3)){
                             drzava.setGlavniGrad(grad);
-//                            System.out.println("doso");
                             tabDrzava.close();
                         }
                         grad.setDrzava(drzava);
