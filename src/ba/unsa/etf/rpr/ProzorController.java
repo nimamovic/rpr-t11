@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.sql.Connection;
 
-public class ProzorControler {
+public class ProzorController {
     public TextField gradZaDodavanje;
     public TextField drzavaZaBrisanje;
     public Button dugmeBrisiDrzavu;
