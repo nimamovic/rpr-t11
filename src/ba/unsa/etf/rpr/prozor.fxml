@@ -10,15 +10,15 @@
 <AnchorPane prefHeight="301.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.ProzorController">
     <children>
         <Label layoutX="191.0" layoutY="26.0" prefHeight="21.0" prefWidth="139.0" text="        Geografija" />
-        <Button fx:id="dugmeNadjiGrad" layoutX="51.0" layoutY="83.0" mnemonicParsing="false" onAction="#NadjiGlavniGrad" text="Nadji grad" />
-        <Button fx:id="dugmeBrisiDrzavu" layoutX="51.0" layoutY="185.0" mnemonicParsing="false" onAction="#ObrisiDrzavuINjeneGradove" text="Brisi drzavu" />
+        <Button fx:id="dugmeNadjiGrad" layoutX="51.0" layoutY="83.0" mnemonicParsing="false" onAction="#NadjiGlavniGrad" text="%nadjiGrad" />
+        <Button fx:id="dugmeBrisiDrzavu" layoutX="51.0" layoutY="185.0" mnemonicParsing="false" onAction="#ObrisiDrzavuINjeneGradove" text="%brisiDrzavu" />
         <ImageView fitHeight="106.0" fitWidth="139.0" layoutX="191.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@slika.jpg" />
             </image>
         </ImageView>
-        <Label layoutX="347.0" layoutY="54.0" text="Unesi grad:" />
-        <Label layoutX="310.0" layoutY="190.0" text="        Unesi državu:" />
+        <Label layoutX="347.0" layoutY="54.0" text="%unesiGrad" />
+        <Label layoutX="310.0" layoutY="190.0" text="%unesiDrzavu" />
         <TextField fx:id="gradZaDodavanje" layoutX="328.0" layoutY="83.0" />
         <TextField fx:id="drzavaZaBrisanje" layoutX="328.0" layoutY="216.0" />
         <Label fx:id="opcija" layoutX="180.0" layoutY="255.0" prefHeight="21.0" prefWidth="139.0" text="     " />

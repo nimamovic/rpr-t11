@@ -18,11 +18,17 @@ public class MainZaProzor extends Application {
         }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("prozor.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+            Locale.setDefault(new Locale("fr"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader( getClass().getResource("prozor.fxml" ), bundle);
+
+        Parent root = loader.load();
         primaryStage.setTitle("Geografija");
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-        primaryStage.setResizable(false);
+        primaryStage.setMinWidth(640);
+        primaryStage.setMinHeight(480);
         primaryStage.show();
+
     }
 }
