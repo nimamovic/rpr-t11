@@ -11,6 +11,10 @@ public class GeografijaDAO {
     private static GeografijaDAO instance;
     private static Connection connection;
 
+    public static Connection getConnection() {
+        return connection;
+    }
+
     private GeografijaDAO() {
         boolean init = !databaseExists();
         try {

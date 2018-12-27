@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -10,22 +11,39 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
-public class ProzorController {
+public class ProzorController implements Initializable {
     public TextField gradZaDodavanje;
     public TextField drzavaZaBrisanje;
     public Button dugmeBrisiDrzavu;
     public Label opcija;
-
-
     public BorderPane mainPane;
 
+    private GeografijaDAO baza ;
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public void ispis(ActionEvent actionEvent){
+        baza = GeografijaDAO.getInstance();
+        GradoviReport report = new GradoviReport();
+        try {
+            report.showReport(GeografijaDAO.getConnection());
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void ObrisiDrzavuINjeneGradove(ActionEvent actionEvent) {
         GeografijaDAO gdo = GeografijaDAO.getInstance();

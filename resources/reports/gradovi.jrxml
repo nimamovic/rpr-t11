@@ -7,9 +7,7 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
-	<parameter name="Parameter1" class="java.lang.String">
-		<defaultValueExpression><![CDATA[ java.lang.String]]></defaultValueExpression>
-	</parameter>
+	<parameter name="reportsDirPath" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[select g.naziv, g.broj_stanovnika
 from grad g
@@ -30,7 +28,7 @@ order by g.broj_stanovnika desc;]]>
 		<band height="70" splitType="Stretch">
 			<image>
 				<reportElement x="275" y="0" width="300" height="64" uuid="88796d59-cd8c-43c1-853f-dd6acfa88258"/>
-				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+				<imageExpression class="java.io.File" ><![CDATA[new File($P{reportsDirPath},"leaf_banner_violet.png")]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="bcf29663-c4b8-483e-a197-e5f6920fd2a2"/>

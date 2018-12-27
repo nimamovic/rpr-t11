@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.ProzorController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.ProzorController">
 <top>
     <VBox BorderPane.alignment="CENTER">
         <children>
@@ -25,10 +25,10 @@
                         <items>
                             <Menu mnemonicParsing="false" text="Language">
                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Bosanski" onAction="#setBa"/>
-                                    <MenuItem mnemonicParsing="false" text="English" onAction="#setEn"/>
-                                    <MenuItem mnemonicParsing="false" text="Deutsch" onAction="#setDe"/>
-                                    <MenuItem mnemonicParsing="false" text="Frnacois" onAction="#setFr"/>
+                                    <MenuItem mnemonicParsing="false" onAction="#setBa" text="Bosanski" />
+                                    <MenuItem mnemonicParsing="false" onAction="#setEn" text="English" />
+                                    <MenuItem mnemonicParsing="false" onAction="#setDe" text="Deutsch" />
+                                    <MenuItem mnemonicParsing="false" onAction="#setFr" text="Frnacois" />
                                 </items>
                             </Menu>
                         </items>
@@ -42,6 +42,7 @@
                     <Button mnemonicParsing="false" text="%unesiDrzavu" />
                     <Button fx:id="dugmeNadjiGrad" layoutX="303.0" layoutY="97.0" mnemonicParsing="false" onAction="#NadjiGlavniGrad" text="%nadjiGrad" />
                     <Button fx:id="dugmeBrisiDrzavu" layoutX="303.0" layoutY="215.0" mnemonicParsing="false" onAction="#ObrisiDrzavuINjeneGradove" text="%brisiDrzavu" />
+                    <Button mnemonicParsing="false" onAction="#ispis" text="%izvještaj" />
 
                 </children>
                 <padding>

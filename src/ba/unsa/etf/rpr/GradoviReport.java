@@ -12,6 +12,7 @@ public class GradoviReport extends JFrame {
     public void showReport(Connection conn) throws JRException {
         String reportSrcFile = getClass().getResource("/reports/gradovi.jrxml").getFile();
         String reportsDir = getClass().getResource("/reports/").getFile();
+
         JasperReport jasperReport = JasperCompileManager.compileReport(reportSrcFile);
         HashMap<String, Object> parameters = new HashMap<>();
         parameters.put("reportsDirPath", reportsDir);
