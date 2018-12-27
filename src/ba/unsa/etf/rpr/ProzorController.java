@@ -77,7 +77,7 @@ public class ProzorController {
         Stage primaryStage = (Stage)mainPane.getScene().getWindow();
         Locale.setDefault(locale);
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("program.fxml"), bundle);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("prozor.fxml"), bundle);
         Parent root = null;
         try {
             root = loader.load();

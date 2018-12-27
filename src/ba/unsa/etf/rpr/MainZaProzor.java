@@ -19,7 +19,7 @@ public class MainZaProzor extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-            Locale.setDefault(new Locale("fr"));
+            Locale.setDefault(new Locale("bs"));
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         FXMLLoader loader = new FXMLLoader( getClass().getResource("prozor.fxml" ), bundle);
 
