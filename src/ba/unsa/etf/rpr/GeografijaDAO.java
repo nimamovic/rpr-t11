@@ -1,11 +1,14 @@
 package ba.unsa.etf.rpr;
 
+import javafx.fxml.FXML;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class GeografijaDAO {
     private static GeografijaDAO instance;
@@ -69,6 +72,7 @@ public class GeografijaDAO {
 //        System.out.println(db.getAbsolutePath());
         return db.exists();
     }
+
 
     private static void initialize() {
         instance = new GeografijaDAO();

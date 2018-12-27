@@ -10,9 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Locale;
@@ -29,6 +31,19 @@ public class ProzorController implements Initializable {
 
     private GeografijaDAO baza ;
 
+
+    public void snimi(ActionEvent actionEvent){
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PDF Files", "*.pdf"),
+                new FileChooser.ExtensionFilter("DOCX Files", "*.docx"),
+                new FileChooser.ExtensionFilter("XSLX Files", "*.xslx")
+        );
+        File selectedFile = fileChooser.showSaveDialog(stage);
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

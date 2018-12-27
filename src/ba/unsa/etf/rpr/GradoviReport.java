@@ -26,4 +26,7 @@ public class GradoviReport extends JFrame {
         this.setSize(700, 500);
         this.setVisible(true);
     }
+    public void saveAs(String format){
+
+    }
 }
