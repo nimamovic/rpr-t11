@@ -44,6 +44,7 @@
                     <Button fx:id="dugmeNadjiGrad" layoutX="303.0" layoutY="97.0" mnemonicParsing="false" onAction="#NadjiGlavniGrad" text="%nadjiGrad" />
                     <Button fx:id="dugmeBrisiDrzavu" layoutX="303.0" layoutY="215.0" mnemonicParsing="false" onAction="#ObrisiDrzavuINjeneGradove" text="%brisiDrzavu" />
                     <Button mnemonicParsing="false" onAction="#ispis" text="%izvještaj" />
+                  <Button mnemonicParsing="false" onAction="#pozivGradoviD" text="%izvjestajDrzave" />
 
                 </children>
                 <padding>

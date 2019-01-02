@@ -149,6 +149,7 @@ public class GeografijaDAO {
         return null;
     }
 
+
     public Grad glavniGrad(String drzava) {
         ArrayList<Grad> grd = gradovi();
 
@@ -181,6 +182,7 @@ public class GeografijaDAO {
 
         return null;
     }
+
 
     public void dodajGrad(Grad grad) {
         String query = "insert into grad values(?, ?, ?, ?);";

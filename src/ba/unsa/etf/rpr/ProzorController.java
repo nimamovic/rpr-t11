@@ -106,6 +106,22 @@ public class ProzorController implements Initializable {
             opcija.setText("Glavni grad "+ gradZaDodavanje.getText()+" je "+gg.getNaziv()+"!");
         }
     }
+
+    public void pozivGradoviD(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("drzava.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+            Stage stage = new Stage();
+            stage.setTitle("Država");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private void selectLanguage(Locale locale) {
         Stage primaryStage = (Stage)mainPane.getScene().getWindow();
         Locale.setDefault(locale);
