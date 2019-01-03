@@ -15,16 +15,16 @@ public class DrzavaController implements Initializable {
     private ObservableList<String> listaDrzava = FXCollections.observableArrayList();
 
     public DrzavaController() {
-
-
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
             listaDrzava.add("Francuska");
             listaDrzava.add("Velika Britanija");
             listaDrzava.add("Austrija");
+            
             drzavaCombo.setItems(listaDrzava);
-        }
+    }
 
     public void kreirajIzvjestaj(ActionEvent actionEvent) {
         GradoviReport gradoviReport = new GradoviReport();
